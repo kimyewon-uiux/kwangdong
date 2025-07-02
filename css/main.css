@@ -20,11 +20,15 @@ video{
     width: 100%; height: 100vh; object-fit: cover;
 }
 
+.nav-up {
+    top: -9rem; 
+}
 /******************************************************************************* header */
 header{
     z-index: 1000; padding: 0 40px;
     position: fixed; width: 100%; height: 9rem;
     display: flex; justify-content: space-between; align-items: center;
+    background: linear-gradient(to bottom, #0000006b, #00000000);
 }
 
 header h1{
@@ -482,7 +486,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 }
 .product-wrap ul{
     z-index: 1;
-    position: absolute; left: 53rem; bottom: 10rem; display: flex; 
+    position: absolute; left: 53rem; bottom: 15rem; display: flex; 
     align-items: flex-end; gap: 3rem;
 } 
 
@@ -511,11 +515,12 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
     border-radius: 3rem; color: var(--org-color); font-weight: 400;
     font-size: 1.8rem; border: 2px solid var(--org-color);
 }
-.product-wrap li .pd-btns a:nth-child(2){color: #fff; background: var(--org-color);}
+.product-wrap li .pd-btns a:nth-child(2){border:none; color: #fff; background: var(--org-color);}
 .product-wrap li .pd-btns a:nth-child(2)::before{
     content: '\F118'; font-family: 'remixicon';
     color: #fff; margin-right: 1rem; font-weight: 300;
 }
+.product-wrap li .pd-btns a:nth-child(2):hover{background:#ff3e03;}
 
 
 .product-swiper .swiper-slide-active .pd-img img{scale: .9;}
@@ -535,15 +540,11 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 /* R&D  ******************************************************************************* */
 
 .rnd-wrap{
-    padding: 10rem 0; height: 100vh;  background: #0c0401a1;
+    padding: 10rem 0; height: 100vh;  background: #000000a4;
     position: relative; opacity: 1;
     display: flex; flex-direction: column; justify-content: center;
 }
-/* .rnd-wrap::before{
-    z-index: -200; opacity: .15;
-    content: ''; width: 100%; height: 100vh;position: absolute; top: 0;left: 0;right: 0;bottom: 0;
-    background: url(../img/sec-r&D/hans-reniers-lQGJCMY5qcM-unsplash.jpg) 0 0 / 100% auto no-repeat;
-} */
+
 
 .rnd-wrap .bgimg {z-index: -1;
    position: absolute;  left: 0; right: 0; top: 0; bottom: 0; overflow: hidden;
@@ -561,7 +562,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 .rnd-wrap hgroup h2{margin-bottom: 1rem;}
 .rnd-wrap .more-btn a{color: #ededed; margin-top: 2rem;}
 .rnd-wrap .more-btn a::after{  color: #ededed;}
-.rnd-wrap .more-btn a::before{background: #ededed4e;}
+.rnd-wrap .more-btn a::before{background: var(--org-color);}
 
 
 .rnd-contents{
@@ -572,11 +573,12 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
     position: relative;
     backdrop-filter:  blur(10px);
     width: 20%; height: 45rem; 
-    display: flex; padding: 3rem;
+    display: flex; padding: 3rem; 
+    flex-direction: column; justify-content: space-between; align-items: flex-end;
     border-radius: 3rem;
-    background:  #140a0944;
+    background:  #00000044;
     overflow: hidden;
-    transition: all .5s;
+    
 }
 .rnd-contents li::before{
     content: ''; z-index: -100;
@@ -600,15 +602,27 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 
 .rnd-wrap .rnd-contents li:hover{
-    width: 55%; background:  #140a099f;
+    width: 55%; background:  #0000009f;
+    transition: all .5s;
 }
 
 .rnd-contents li:hover .box-title p:nth-child(2){display: block;}
+.rnd-contents li:hover a{display: block;}
+.rnd-contents  li:hover .box-title .title-text{font-size: 2.8rem;}
 
+.rnd-contents  li a{
+    display: none; font-size: 1.8rem; padding: 1.5rem 2rem;
+    border-radius: 3rem;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    transition: all .3s;
+}
+.rnd-contents  li a:hover{border: 1px solid var(--org-color);
+    color: var(--org-color);}
 
-.rnd-contents  .box-title{margin-top: 2rem; font-weight: 200; color: #edededd0;}
-.rnd-contents  .box-title p:nth-child(2){display: none; margin-top: 2rem;}
-.rnd-contents  .box-title .title-text{ position: relative; font-size: 2.2rem;font-weight: 500; color: #ededed;}
+.rnd-contents  .box-title{ width: 100%;font-size: 1.8rem; margin-top: 2rem; font-weight: 200; color: #edededd0;}
+.rnd-contents  .box-title p:nth-child(2){display: none; margin-top: 2rem; line-height: 1.4;}
+.rnd-contents  .box-title .title-text{ position: relative; font-size: 2.4rem;font-weight: 500; color: #ededed;line-height: 1.2;}
 .rnd-contents  .box-title .title-text::after{
     content: ''; width: 8px; height: 8px;
     position: absolute; top: -2rem; left: 0;

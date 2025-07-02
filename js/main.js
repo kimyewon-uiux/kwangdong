@@ -1,0 +1,117 @@
+const headerGnb = document.querySelector('#gnb')
+const header = document.querySelector('header')
+
+headerGnb.addEventListener('mouseenter', function() {
+   header.classList.add('scroll')
+})
+headerGnb.addEventListener('mouseleave', function() {
+   header.classList.remove('scroll')
+})
+
+
+// header **********************************************
+// 공통
+document.addEventListener('mousedown',(event)=>{
+  
+   if(!langList.contains(event.target)){
+       langList.classList.remove('active');
+   }
+   if(!familySite.contains(event.target)){
+       familySiteList.classList.remove('active');
+       familySite.classList.remove('active');
+   }
+   
+
+})
+
+// langwrap **********
+const langBtn = document.querySelector('.lang-wrap button')
+const langList = document.querySelector('.lang-wrap ul')
+
+langBtn.addEventListener('click',()=>{
+   langList.classList.toggle('active');
+   familySite.classList.toggle('active');
+})
+
+// allmenu **********
+
+const allmenuOpenBtn = document.querySelector('.allmenu-wrap .allmenu-open')
+const allmenuCloseBtn = document.querySelector('.allmenu-wrap .allmenu-popup button')
+const allmenu = document.querySelector('.allmenu-wrap .allmenu-popup')
+
+allmenuOpenBtn.addEventListener('click', ()=>{
+   allmenu.style.display = 'flex';
+})
+allmenuCloseBtn.addEventListener('click', ()=>{
+   allmenu.style.display = 'none';
+})
+
+
+// main Visual *******************************************************
+// const progressCircle = document.querySelector(".progress-circle .border");
+const progressCircle = document.querySelector(".autoplay-progress svg");
+const progressContent = document.querySelector(".autoplay-progress span");
+const mainStopBtn= document.querySelector('.swiper-controls-wrap .btn-stop')
+const mainPlayBtn= document.querySelector('.swiper-controls-wrap .btn-play')
+
+const mainSwiper = new Swiper('.main-swiper', {
+   autoplay : {
+      delay : 5000
+    },
+   loop :true,
+   navigation: {
+      nextEl: '.swiper-next',
+      prevEl: '.swiper-prev',
+    },
+    
+   pagination : {
+      el: '.my-pagination',
+      type: 'custom',
+      renderCustom: function (swiper ,current, total) {
+         return `<span class="">${current} </span>
+         <span class=""> / ${total}</span>
+         `;
+      }
+   },
+
+   on: {
+         
+        autoplayTimeLeft(s, time, progress) {
+          progressCircle.style.setProperty("--progress", 1 - progress);
+          progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+        },
+        
+      }
+
+});
+
+// footer **********************************************
+
+const familySite = document.querySelector('.familysite')
+const familySiteBtn = document.querySelector('.familysite button')
+const familySiteList = document.querySelector('.familysite .familysite-list')
+
+familySiteBtn.addEventListener('click',()=>{
+   familySiteList.classList.toggle('active');
+   familySite.classList.toggle('active');
+
+})
+
+
+// Product ***********************************************************
+
+const productSwiper = new Swiper(".product-swiper", {
+   autoplay : {
+     delay : 4000
+   },
+   loop : true,
+   slidesPerView: 'auto',
+   centeredSlides : true,
+   
+   navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+ 
+ });
+

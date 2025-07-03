@@ -87,7 +87,7 @@ gsap.utils.toArray('.history-contents .history-box').forEach((selector) =>{
         }
     })
     // .from(selector, {opacity : '0'}, 0)
-    .to(selector, {transform : 'rotateX(-10deg) scale(0.9)', transformOrigin: 'top', filter : 'brightness(0.8)'} , 0)
+    .to(selector, {transform : 'rotateX(-10deg) scale(0.9)', transformOrigin: 'top', filter : 'brightness(0.9)'} , 0)
 })
 
 

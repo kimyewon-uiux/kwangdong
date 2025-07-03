@@ -678,7 +678,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 
 .history-contents{
-    width: 100%; position: relative; 
+    width: 100%; position: relative; top: 10rem;
     /* display: flex; flex-direction: column; gap: 2rem; */
     perspective: 90rem;
 }
@@ -687,7 +687,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
     margin-bottom: 5rem;
     width: 100%; aspect-ratio: 7 / 2; overflow: hidden;
     border-radius: 5rem; 
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     box-shadow: 3px 3px 10px #21212109;
     background: #ffffff;
     position: -webkit-sticky; position: sticky; top:100px; filter: brightness(1);

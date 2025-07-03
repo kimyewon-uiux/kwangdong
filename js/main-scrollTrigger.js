@@ -1,3 +1,4 @@
+window.onload = function(){
 gsap.registerPlugin(ScrollTrigger) ;
 
 const productWrap = gsap.timeline({
@@ -62,3 +63,33 @@ rndWrap
 //     .to('.history-wrap .box2',{yPercent : -20,background:'#F0F0F0'})
 //     .to('.history-wrap .box3',{yPercent : -10,background:'#FDFDFD'})
 //     .from('.history-wrap .box4',{yPercent : +70,opacity : 0})
+
+gsap.from('.history-wrap',{
+   
+    scrollTrigger : {
+        trigger : '.history-wrap',
+        start : '0% 0%',
+        end : 'bottom 0%',
+        pin : true,
+        markers : true
+    }
+})
+
+
+gsap.utils.toArray('.history-contents .history-box').forEach((selector) =>{
+    gsap.timeline({
+        scrollTrigger :{
+            trigger : selector,
+            start : '0% 40%',
+            end : '0% 0%',
+            scrub : 1,
+            // markers: true
+        }
+    })
+    // .from(selector, {opacity : '0'}, 0)
+    .to(selector, {transform : 'rotateX(-10deg) scale(0.9)', transformOrigin: 'top', filter : 'brightness(0.8)'} , 0)
+})
+
+
+
+}

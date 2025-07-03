@@ -627,7 +627,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 
 /* ESG  **************************************************************************************** */
-.esg-wrap{position: relative;  padding: 10rem 0; height: 100vh;}
+.esg-wrap{position: relative;  padding: 10rem 0; height: 100vh; overflow: hidden;}
 .esg-wrap .container{margin: 0 0 0 24rem; }
 .esg-wrap .section-title{position: absolute; top: 20rem;}
 .esg-wrap .swiper-esg{position: absolute;  top: 0; right: 0; width: 50%; }
@@ -654,8 +654,8 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 /* History ************************************************************************************* */
 .history-wrap{ 
-    overflow: hidden; 
-    position: relative; padding: 10rem 0; background: #ffffff; height: 100vh;}
+    overflow: hidden; border: 1px solid #000;
+    position: relative; padding: 10rem 0;  height: 100vh;}
 .history-wrap .flow-content{
     z-index: -100;
     position: absolute; top: 0; left: 0; padding: 0; margin: 0;
@@ -704,20 +704,24 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 
 
-.history-contents .history-box
+.history-contents .history-box{}
 
 
 
 
 
 /* Media ************************************************************************************* */
-.media-wrap{ position: relative; padding: 10rem 0; background: #fc3200e0;}
+.media-wrap{ 
+    position: relative;
+    padding: 10rem 0; background: #fc3200e0;
+}
 .media-wrap::before{
     z-index: -200;
     content: ''; left: 0;right: 0;top: 0;bottom: 0;
     width: 100%; height: 100%; 
     background: url(../img/pawel-czerwinski-fOXvuWswMDs-unsplash.jpg) 0 0 / 100% auto;
-    position: absolute;}
+    position: absolute;
+}
 .media-wrap hgroup{color: #FFF;}
 .media-wrap hgroup span{color: #ffffff7c;}
 .media-contents{width: 100%; display: flex; align-items: center; justify-content: center; }
@@ -731,7 +735,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 
 /* News  ************************************************************************************* */
-.news-wrap{padding: 10rem 0;}
+.news-wrap{padding: 10rem 0; border: 1px solid #000;}
 .news-contents{ margin-top: 3rem; width: 100%; display: flex; justify-content: space-between; padding-bottom: 7rem;}
 .news-contents .news-card{ 
     border: 2px solid #00000000; border-bottom: 2px solid var(--org-color); width: 30%;}

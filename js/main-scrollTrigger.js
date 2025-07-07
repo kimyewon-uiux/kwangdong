@@ -1,15 +1,59 @@
 window.onload = function(){
 gsap.registerPlugin(ScrollTrigger) ;
+gsap.registerPlugin(ScrollToPlugin);
+
+
+
+let sections = gsap.utils.toArray(".panel1");
+
+function goToSection(i) {
+  gsap.to(window, {
+    scrollTo: { y: i * innerHeight, autoKill: false, ease: "Power3.easeInOut" },
+    duration: 0.85
+  });
+}
+
+ScrollTrigger.defaults({
+  // markers: true
+});
+
+sections.forEach((eachPanel, i) => {
+  // const mainAnim = gsap.timeline({ paused: true });
+
+  ScrollTrigger.create({
+    trigger: eachPanel,
+    onEnter: () => goToSection(i)
+  });
+
+  ScrollTrigger.create({
+    trigger: eachPanel,
+    start: "bottom bottom",
+    onEnterBack: () => goToSection(i)
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const productWrap = gsap.timeline({
     scrollTrigger : {
     trigger: '.product-wrap',
-    start: 'top top',
-    end : 'bottom 20%',
+    start: '-=20 top',
+    // end : '20% 20%',
     toggleActions : 'play none none reverse',
     // scrub : true, 
-    // markers: true,
-    pin: true
+    markers: true,
+    // pin: true
     }
 })
 productWrap
@@ -19,23 +63,23 @@ productWrap
     .from('.product-wrap .product-swiper ul',{opacity : 0})
 
 
-const rndWrap = gsap.timeline({
-    scrollTrigger : {
-    trigger: '.rnd-wrap',
-    start: 'top top',
-    end : 'bottom 20%',
-    toggleActions : 'play none none reverse',
-    // scrub : true, 
-    // markers: true,
-    pin: true
-    }
-})
+// const rndWrap = gsap.timeline({
+//     scrollTrigger : {
+//     trigger: '.rnd-wrap',
+//     start: 'top top',
+//     end : 'bottom 20%',
+//     toggleActions : 'play none none reverse',
+//     // scrub : true, 
+//     // markers: true,
+//     pin: true
+//     }
+// })
 
-rndWrap
-    .from('.rnd-wrap',{yPercent : +70})
-    .from('.rnd-wrap hgroup h2',{yPercent : -30, opacity : 0})
-    .from('.rnd-wrap hgroup p',{yPercent : -30, opacity : 0})
-    .from('.rnd-wrap .more-btn',{yPercent : -30, opacity : 0})
+// rndWrap
+//     // .from('.rnd-wrap',{yPercent : +70})
+//     .from('.rnd-wrap hgroup h2',{yPercent : -30, opacity : 0})
+//     .from('.rnd-wrap hgroup p',{yPercent : -30, opacity : 0})
+//     .from('.rnd-wrap .more-btn',{yPercent : -30, opacity : 0})
     
 
 
@@ -64,58 +108,58 @@ rndWrap
 //     .to('.history-wrap .box3',{yPercent : -10,background:'#FDFDFD'})
 //     .from('.history-wrap .box4',{yPercent : +70,opacity : 0})
 
-gsap.from('.history-wrap',{
+// gsap.from('.history-wrap',{
    
-    scrollTrigger : {
-        trigger : '.history-wrap',
-        start : '0% 0%',
-        end : 'bottom 0%',
-        // pin : true,
-        // markers : true
-    }
-})
+//     scrollTrigger : {
+//         trigger : '.history-wrap',
+//         start : '0% 0%',
+//         end : 'bottom 0%',
+//         // pin : true,
+//         // markers : true
+//     }
+// })
 
 
 
-gsap.utils.toArray('.history-contents .history-box').forEach((selector) =>{
-    gsap.timeline({
-        scrollTrigger :{
-            trigger : selector,
-            start : '0% 30%',
-            end : '0% 0%',
-            scrub : 1,
-            // markers: true
-        }
-    })
-    // .from(selector, {opacity : '0'}, 0)
-    .to(selector, {transform : 'rotateX(-10deg) scale(0.9)', transformOrigin: 'top', filter : 'brightness(0.9)'} , 0)
-})
+// gsap.utils.toArray('.history-contents .history-box').forEach((selector) =>{
+//     gsap.timeline({
+//         scrollTrigger :{
+//             trigger : selector,
+//             start : '0% 30%',
+//             end : '0% 0%',
+//             scrub : 1,
+//             // markers: true
+//         }
+//     })
+//     // .from(selector, {opacity : '0'}, 0)
+//     .to(selector, {transform : 'rotateX(-10deg) scale(0.9)', transformOrigin: 'top', filter : 'brightness(0.9)'} , 0)
+// })
 
 
 
 gsap.from('.media-wrap .title-text',{
-   x : -1000, duration : 1,
+   x : -1000, duration : .5,
     scrollTrigger : {
-        trigger : '.media-wrap .title-text',
-        start : '-=600% top',
+        trigger : '.media-wrap',
+        start : '-=20 top',
         toggleActions : 'play none none reverse',
-        markers : true
+        // markers : true
     }
 })
 gsap.from('.media-wrap .more-btn',{
-   x : 1000, duration : 1,
+   x : 1000, duration : .5,
     scrollTrigger : {
-        trigger : '.media-wrap .title-text',
+        trigger : '.media-wrap',
         toggleActions : 'play none none reverse',
-        start : '-=600% top',
+        start: '-=20 top',
     }
 })
 gsap.from('.media-wrap .media-contents',{
    y : 1000, duration : 2, scale : 0.1,
     scrollTrigger : {
-        trigger : '.media-wrap .title-text',
+        trigger : '.media-wrap',
         toggleActions : 'play none none reverse',
-        start : '-=600% top',
+        start: '-=20 top',
     }
 })
 

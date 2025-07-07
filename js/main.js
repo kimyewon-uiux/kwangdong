@@ -188,16 +188,16 @@ const productSwiper = new Swiper(".product-swiper", {
  
  });
 
-// RND**
-const rndBgBox = document.querySelector('.rnd-wrap .bgimg')
-const rndLiArray = Array.from(document.querySelectorAll('rnd-contents li'));
-const rndLi = document.querySelectorAll('rnd-contents li');
 
-rndLi.forEach(tab => {
-   tab.addEventListener('mouseenter', function(e){
-       
-       
+// RND**
+const rndBgBox = document.querySelector('.rnd-wrap .bgimg img')
+// const rndLiArray = Array.from(document.querySelectorAll('rnd-contents li'));
+const rndLi = document.querySelectorAll('.rnd-contents li');
+const rndLiImg = document.querySelectorAll('.rnd-contents li img');
+
+rndLiImg.forEach(tab => {
+   tab.addEventListener('mouseenter',() => {
        //클릭이벤트가 발생한 탭
-       rndBgBox.getElementById("img").src = "./img/sec-r&D/f1_5.jpg";
+       rndBgBox.src = tab.src;
    })
 })

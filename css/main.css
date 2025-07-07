@@ -540,7 +540,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 /* R&D  ******************************************************************************* */
 
 .rnd-wrap{
-    padding: 10rem 0; height: 100vh;  background: #000000a4;
+    padding: 10rem 0; height: 100vh; 
     position: relative; 
     display: flex; flex-direction: column; justify-content: center;
 }
@@ -548,11 +548,22 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 .rnd-wrap .bgimg {z-index: -1;
    position: absolute;  left: 0; right: 0; top: 0; bottom: 0; overflow: hidden;
+   transition: all .5s
 }
 .rnd-wrap .bgimg img{ 
     width: 120%; height: 100%;
     object-fit: cover;
+    filter: brightness(30%) grayscale(1);
+    transition: all .5s
 }
+
+.rnd-contents li img{
+    z-index: 3000;
+    position: absolute; top: 0;left: 0;right: 0;bottom: 0;
+    opacity: 0;
+}
+
+
 
 @media screen and (max-width : 1410px) {
     .rnd-wrap::before{background: url(../img/sec-r&D/hans-reniers-lQGJCMY5qcM-unsplash.jpg) 50% 0 / auto 100%  no-repeat;
@@ -719,6 +730,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 .media-wrap{ 
     position: relative;
     padding: 10rem 0; background: #fc3200e0;
+    height: 100vh;
 }
 .media-wrap::before{
     z-index: -200;
@@ -727,12 +739,12 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
     background: url(../img/pawel-czerwinski-fOXvuWswMDs-unsplash.jpg) 0 0 / 100% auto;
     position: absolute;
 }
-.media-contents .container{margin: 0 24rem;}
-.media-contents .section-title{width: 100%;}
+.media-contents .container{margin: 0 24rem; display: flex; }
+.media-contents .section-title{width: 20%; display: flex; flex-direction: column;}
 .media-wrap hgroup{color: #FFF;}
 .media-wrap hgroup span{color: #ffffff7c;}
 .media-contents{width: 100%; display: flex; align-items: center; justify-content: center; }
-.media-contents iframe{width: 100%; aspect-ratio: 1193 / 671;}
+.media-contents iframe{width: 70%; aspect-ratio: 1193 / 671;}
 
 .media-wrap .more-btn a{  z-index: 11; color: #ededed; }
 .media-wrap .more-btn a::after{  color: #ededed;}
@@ -742,7 +754,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 
 /* News  ************************************************************************************* */
-.news-wrap{padding: 10rem 0; border: 1px solid #000;}
+.news-wrap{padding: 10rem 0; }
 .news-contents{ margin-top: 3rem; width: 100%; display: flex; justify-content: space-between; padding-bottom: 7rem;}
 .news-contents .news-card{ 
     border: 2px solid #00000000; border-bottom: 2px solid var(--org-color); width: 30%;}

@@ -70,17 +70,18 @@ gsap.from('.history-wrap',{
         trigger : '.history-wrap',
         start : '0% 0%',
         end : 'bottom 0%',
-        pin : true,
-        markers : true
+        // pin : true,
+        // markers : true
     }
 })
+
 
 
 gsap.utils.toArray('.history-contents .history-box').forEach((selector) =>{
     gsap.timeline({
         scrollTrigger :{
             trigger : selector,
-            start : '0% 40%',
+            start : '0% 30%',
             end : '0% 0%',
             scrub : 1,
             // markers: true
@@ -89,6 +90,35 @@ gsap.utils.toArray('.history-contents .history-box').forEach((selector) =>{
     // .from(selector, {opacity : '0'}, 0)
     .to(selector, {transform : 'rotateX(-10deg) scale(0.9)', transformOrigin: 'top', filter : 'brightness(0.9)'} , 0)
 })
+
+
+
+gsap.from('.media-wrap .title-text',{
+   x : -1000, duration : 1,
+    scrollTrigger : {
+        trigger : '.media-wrap .title-text',
+        start : '-=600% top',
+        toggleActions : 'play none none reverse',
+        markers : true
+    }
+})
+gsap.from('.media-wrap .more-btn',{
+   x : 1000, duration : 1,
+    scrollTrigger : {
+        trigger : '.media-wrap .title-text',
+        toggleActions : 'play none none reverse',
+        start : '-=600% top',
+    }
+})
+gsap.from('.media-wrap .media-contents',{
+   y : 1000, duration : 2, scale : 0.1,
+    scrollTrigger : {
+        trigger : '.media-wrap .title-text',
+        toggleActions : 'play none none reverse',
+        start : '-=600% top',
+    }
+})
+
 
 
 

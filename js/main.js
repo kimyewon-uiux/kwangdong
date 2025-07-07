@@ -126,9 +126,36 @@ const mainSwiper = new Swiper('.main-swiper', {
           progressCircle.style.setProperty("--progress", 1 - progress);
           progressContent.textContent = `${Math.ceil(time / 1000)}s`;
         },
+        autoplay: { 
+         timeLeft(s, time, progress) { //프로그래스바를 다시 시작하기 위한 콜백함수
+             resetProgressBar();
+         }
+        }
         
       }
 
+});
+
+
+function resetProgressBar() {
+    progressCircle.style.animation = 'none';
+    progressCircle.offsetHeight; 
+    //style 프로퍼티가 반복되면서 animation 속성이 무시되는 것을 방지
+    progressCircle.style.animation = 'progress 3s linear forwards';
+}
+
+mainPlayBtn.addEventListener('click', () => {
+    swiper.autoplay.start();
+    mainStopBtn.style.display = 'block';
+    mainPlayBtn.style.display = 'none';
+    resetProgressBar();
+});
+
+mainStopBtn.addEventListener('click', () => {
+    swiper.autoplay.stop();
+    mainStopBtn.style.display = 'none';
+    mainPlayBtn.style.display = 'block';
+    progressCircle.style.animation = 'none';
 });
 
 // footer **********************************************
@@ -163,7 +190,8 @@ const productSwiper = new Swiper(".product-swiper", {
 
 // RND**
 const rndBgBox = document.querySelector('.rnd-wrap .bgimg')
-const rndLi = document.querySelectorAll('rnd-contents li')
+const rndLiArray = Array.from(document.querySelectorAll('rnd-contents li'));
+const rndLi = document.querySelectorAll('rnd-contents li');
 
 rndLi.forEach(tab => {
    tab.addEventListener('mouseenter', function(e){

@@ -1,8 +1,8 @@
 /* common */
-.container{ margin: 0 24rem; }
+.container{ width: 80%; margin: auto; }
 @media screen and (max-width: 1200px) {
     html{font-size: 9px;}
-    .container{ margin: 0 10rem; }
+    /* .container{ margin: 0 10rem; } */
 }
 :root{
     font-size: 10px;
@@ -277,9 +277,6 @@ gap: 5rem;}
     display: block;
 }
 
-@media screen and (max-width:1280px) {
-    footer .container{ margin: 0 5rem;}
-}
 
 
 @media screen and (max-width:856px) {
@@ -455,7 +452,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 .swiper-controls-wrap .btn-stop{
     width: 20px; aspect-ratio: 1 / 1; z-index: 5000; display: block; 
 }
-.swiper-controls-wrap .btn-play{width: 20px; aspect-ratio: 1 / 1; z-index: 5000;  display: none;}
+.swiper-controls-wrap .btn-play{width: 20px; aspect-ratio: 1 / 1; z-index: 5000; display: none;}
 
 
 /* Products **************************************************************************************** */
@@ -463,10 +460,13 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 .product-wrap{
     position: relative; overflow: hidden;
     padding: 18rem 0;height: 100vh;}
-.product-wrap .section-title .more-btn{z-index: 10;}
+.product-wrap .section-title .more-btn{
+    z-index: 10;
+    display: flex; justify-content: space-between;
+}
 .product-wrap .section-title{
-    width: 33%; 
-    display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end;
+    width: 40%; 
+    display: flex; flex-direction: column; justify-content: space-between; 
     gap: 5rem;
 }
 
@@ -475,8 +475,8 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 .product-wrap .swiper-navigation{
     display: flex; z-index: 2000;
-    position: absolute; top: 35rem;
-    margin-left: 3rem;
+    /* position: absolute; top: 35rem; */
+    /* margin-left: 3rem; */
 }
 .product-wrap .swiper-navigation i{font-size: 4rem;}
 
@@ -678,7 +678,8 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 
 .history-contents{
-    width: 100%; position: relative; top: 10rem;
+    width: 100%; position: relative; top: 10rem; 
+    border: 1px solid #000;
     /* display: flex; flex-direction: column; gap: 2rem; */
     perspective: 90rem;
 }
@@ -690,7 +691,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
     /* border: 1px solid #000; */
     box-shadow: 3px 3px 10px #21212109;
     background: #ffffff;
-    position: -webkit-sticky; position: sticky; top:100px; filter: brightness(1);
+    position: -webkit-sticky; position: sticky; top: 0px; filter: brightness(1);
 }
 .history-contents .history-box .history-img{ 
     right: 0;  top: 0; bottom: 0; width: 50%;
@@ -726,6 +727,8 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
     background: url(../img/pawel-czerwinski-fOXvuWswMDs-unsplash.jpg) 0 0 / 100% auto;
     position: absolute;
 }
+.media-contents .container{margin: 0 24rem;}
+.media-contents .section-title{width: 100%;}
 .media-wrap hgroup{color: #FFF;}
 .media-wrap hgroup span{color: #ffffff7c;}
 .media-contents{width: 100%; display: flex; align-items: center; justify-content: center; }
@@ -797,8 +800,9 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 .recruit-wrap hgroup{color: #ededed;}
 
+.recruit-wrap .more-btn {margin-right: 5rem;}
 .recruit-wrap .more-btn a{
-    color: #ededed; width: 14.5rem;}
+    color: #ededed; width: 14.5rem; text-align: right;} 
 .recruit-wrap .more-btn a::after{
     color: #ededed;
 }
@@ -806,3 +810,10 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
     animation: moveArrow 1s linear infinite;
 }
 .recruit-wrap .more-btn a::before{background: #ededed4e;}
+
+@media screen and (max-width:500px) {
+    .recruit-wrap{padding: 4rem 0; height: auto;}
+    .recruit-wrap hgroup{width: 100%;}
+    .recruit-wrap .section-title{flex-direction: column; align-items: flex-start;} 
+
+}

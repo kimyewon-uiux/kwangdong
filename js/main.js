@@ -194,6 +194,7 @@ const rndBgBox = document.querySelector('.rnd-wrap .bgimg img')
 // const rndLiArray = Array.from(document.querySelectorAll('rnd-contents li'));
 const rndLi = document.querySelectorAll('.rnd-contents li');
 const rndLiImg = document.querySelectorAll('.rnd-contents li img');
+const rndLiLink = document.querySelectorAll('.rnd-contents li a');
 
 rndLiImg.forEach(tab => {
    tab.addEventListener('mouseenter',() => {
@@ -201,3 +202,8 @@ rndLiImg.forEach(tab => {
        rndBgBox.src = tab.src;
    })
 })
+// rndLiLink.forEach(tab2 => {
+//     tab2.addEventListener('mouseenter',() =>{
+//         rndLiLink.css('color','red')
+//     })
+// })

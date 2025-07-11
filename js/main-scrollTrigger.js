@@ -4,33 +4,33 @@ gsap.registerPlugin(ScrollToPlugin);
 
 
 
-let sections = gsap.utils.toArray(".panel1");
+// let sections = gsap.utils.toArray(".panel1");
 
-function goToSection(i) {
-  gsap.to(window, {
-    scrollTo: { y: i * innerHeight, autoKill: false, ease: "Power3.easeInOut" },
-    duration: 0.85
-  });
-}
+// function goToSection(i) {
+//   gsap.to(window, {
+//     scrollTo: { y: i * innerHeight, autoKill: false, ease: "Power3.easeInOut" },
+//     duration: 0.85
+//   });
+// }
 
-ScrollTrigger.defaults({
-  // markers: true
-});
+// ScrollTrigger.defaults({
+//   // markers: true
+// });
 
-sections.forEach((eachPanel, i) => {
-  // const mainAnim = gsap.timeline({ paused: true });
+// sections.forEach((eachPanel, i) => {
+//   // const mainAnim = gsap.timeline({ paused: true });
 
-  ScrollTrigger.create({
-    trigger: eachPanel,
-    onEnter: () => goToSection(i)
-  });
+//   ScrollTrigger.create({
+//     trigger: eachPanel,
+//     onEnter: () => goToSection(i)
+//   });
 
-  ScrollTrigger.create({
-    trigger: eachPanel,
-    start: "bottom bottom",
-    onEnterBack: () => goToSection(i)
-  });
-});
+//   ScrollTrigger.create({
+//     trigger: eachPanel,
+//     start: "bottom bottom",
+//     onEnterBack: () => goToSection(i)
+//   });
+// });
 
 
 

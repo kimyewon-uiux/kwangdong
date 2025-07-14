@@ -48,7 +48,7 @@ gsap.registerPlugin(ScrollToPlugin);
 const productWrap = gsap.timeline({
     scrollTrigger : {
     trigger: '.product-wrap',
-    start: '-=20 top',
+    start: '-=400 top',
     // end : '20% 20%',
     toggleActions : 'play none none reverse',
     // scrub : true, 
@@ -138,10 +138,10 @@ productWrap
 
 
 gsap.from('.media-wrap .title-text',{
-   x : -1000, duration : .5,
+   x : -1200, duration : .5,
     scrollTrigger : {
         trigger : '.media-wrap',
-        start : '-=20 top',
+        start : '-=400 top',
         toggleActions : 'play none none reverse',
         // markers : true
     }
@@ -151,7 +151,7 @@ gsap.from('.media-wrap .more-btn',{
     scrollTrigger : {
         trigger : '.media-wrap',
         toggleActions : 'play none none reverse',
-        start: '-=20 top',
+        start: '-=200 top',
     }
 })
 gsap.from('.media-wrap .media-contents',{
@@ -159,7 +159,7 @@ gsap.from('.media-wrap .media-contents',{
     scrollTrigger : {
         trigger : '.media-wrap',
         toggleActions : 'play none none reverse',
-        start: '-=20 top',
+        start: '-=200 top',
     }
 })
 

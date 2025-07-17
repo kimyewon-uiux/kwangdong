@@ -52,7 +52,7 @@ const productWrap = gsap.timeline({
     // end : '20% 20%',
     toggleActions : 'play none none reverse',
     // scrub : true, 
-    markers: true,
+    // markers: true,
     // pin: true
     }
 })
@@ -96,44 +96,33 @@ productWrap
 //     }
 // })
 
-// historyWrap
-//     .from('.history-wrap .box1',{yPercent : +70,opacity : 0})
-//     .to('.history-wrap .box1',{yPercent : -10,background:'#F0F0F0'})
-//     .from('.history-wrap .box2',{yPercent : +70,opacity : 0})
-//     .to('.history-wrap .box1',{yPercent : -20,background:'#F0F0F0'})
-//     .to('.history-wrap .box2',{yPercent : -10,background:'#FDFDFD'})
-//     .from('.history-wrap .box3',{yPercent : +70,opacity : 0})
-//     .to('.history-wrap .box1',{yPercent : -30,background:'#EBEBEB'})
-//     .to('.history-wrap .box2',{yPercent : -20,background:'#F0F0F0'})
-//     .to('.history-wrap .box3',{yPercent : -10,background:'#FDFDFD'})
-//     .from('.history-wrap .box4',{yPercent : +70,opacity : 0})
-
-// gsap.from('.history-wrap',{
-   
-//     scrollTrigger : {
-//         trigger : '.history-wrap',
-//         start : '0% 0%',
-//         end : 'bottom 0%',
-//         // pin : true,
-//         // markers : true
-//     }
-// })
 
 
 
-// gsap.utils.toArray('.history-contents .history-box').forEach((selector) =>{
-//     gsap.timeline({
-//         scrollTrigger :{
-//             trigger : selector,
-//             start : '0% 30%',
-//             end : '0% 0%',
-//             scrub : 1,
-//             // markers: true
-//         }
-//     })
-//     // .from(selector, {opacity : '0'}, 0)
-//     .to(selector, {transform : 'rotateX(-10deg) scale(0.9)', transformOrigin: 'top', filter : 'brightness(0.9)'} , 0)
-// })
+gsap.from('.history-wrap .section-title',{
+    y : -1200, duration : .5, opacity : 0,
+     scrollTrigger : {
+         trigger : '.history-wrap',
+         start : 'top top',
+         toggleActions : 'play none none reverse',
+        //  markers : true,
+         pin: true
+     }
+ })
+gsap.from('.history-wrap .history-contents',{
+    y : 1000, duration : .5, opacity : 0,
+     scrollTrigger : {
+         trigger : '.history-wrap',
+         start : 'top top',
+         toggleActions : 'play none none reverse',
+         markers : true,
+         pin: true
+     }
+ })
+
+
+
+
 
 
 

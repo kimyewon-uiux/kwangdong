@@ -468,6 +468,9 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 @media screen and (max-width : 746px) {
     .mv-txt .mobile{font-size: 4rem;}
     .mv-txt .mv-subtitle{font-size: 2rem; line-height: 1.2;}
+    header h1{
+        width: 15rem !important;height: 2.1rem !important;
+    }
 }
 
 
@@ -705,57 +708,60 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 /* History ************************************************************************************* */
 .history-wrap{ 
     overflow: hidden; border: 1px solid #000;
-    position: relative; padding: 10rem 0;  height: 100vh;}
-.history-wrap .flow-content{
-    z-index: -100;
-    position: absolute; top: 0; left: 0; padding: 0; margin: 0;
-    display: flex; flex-direction: column; overflow: hidden;
-}
-.history-wrap .flow-content img{
+    position: relative; padding: 10rem 0; }
+
+/* .history-wrap .flow-content{
+z-index: -100;
+position: absolute; top: 0; left: 0; padding: 0; margin: 0;
+display: flex; flex-direction: column; overflow: hidden;
+} */
+/* .history-wrap .flow-content img{
     scale: .8;
     animation: flow 10s linear infinite;
-}
-@keyframes flow {
+} */
+/* @keyframes flow {
     0%{transform: translateY(0);}
     100%{transform: translateY(-100%);}
-}
-
-.history-box .box-txt .history-title{font-size: 4rem; font-weight: 700;}
-
-.history-wrap hgroup{ 
-    display: flex; align-items: center; gap: 2rem;
-}
+} */
 
 
+.history-wrap hgroup{
+     display: flex; align-items: center;justify-content: center; 
+     width: 100%; height: 10rem;
+    }
+.history-wrap hgroup img{scale: .4; padding-bottom: 0;}
 .history-contents{
-    width: 100%; position: relative; top: 10rem; 
-    border: 1px solid #000;
+    width: 100%; position: relative; 
     /* display: flex; flex-direction: column; gap: 2rem; */
-    perspective: 90rem;
 }
 .history-contents .history-box{
-    display: flex; align-items: center; justify-content: space-between; 
-    margin-bottom: 5rem;
-    width: 100%; aspect-ratio: 7 / 2; overflow: hidden;
-    border-radius: 5rem; 
-    /* border: 1px solid #000; */
-    box-shadow: 3px 3px 10px #21212109;
-    background: #ffffff;
-    position: -webkit-sticky; position: sticky; top: 0px; filter: brightness(1);
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 80vh; overflow: hidden;
+    border: 1px solid #ff0000;
+    position: relative;
 }
 .history-contents .history-box .history-img{ 
-    right: 0;  top: 0; bottom: 0; width: 50%;
+    display: none;
+    position: absolute; width: 40%; aspect-ratio: 3 /2;
+    right: 30%;
     overflow: hidden;
 }
 .history-box .history-img img{ width: 100%; object-fit: fill; }
 
 .history-box .box-txt{
-    display: flex; flex-direction: column; margin-left: 7rem; justify-content: center;
+    width: 100%;
+    /* display: flex; align-items: center; justify-content: space-between; */
 }
 
-.box-txt p:nth-child(3){ font-size: 1.8rem; margin-top: 2rem; color: #555; line-height: 1.2;} 
-.box-txt .history-year{ font-size: 6.8rem; font-weight: 700; color: var(--org-color);}
-.box-txt .history-title{ font-size: 2.6rem; font-weight: 500; margin-top: 1rem; }
+.box-txt .history-year{
+    position: absolute; left: 30%; top: 35%;
+    font-size: 9rem; font-weight: 700; color: var(--org-color);
+}
+.box-txt .history-box-right{ 
+    position: absolute; left: 50%;top: 35%;
+    font-size: 2rem; 
+}
+.box-txt .history-title{font-size: 9rem; font-weight: 700; margin-bottom: 1rem;}
 
 
 

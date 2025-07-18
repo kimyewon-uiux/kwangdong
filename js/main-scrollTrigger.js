@@ -106,19 +106,20 @@ gsap.from('.history-wrap .section-title',{
          start : 'top top',
          toggleActions : 'play none none reverse',
         //  markers : true,
-         pin: true
+        //  pin: true
      }
  })
-gsap.from('.history-wrap .history-contents',{
-    y : 1000, duration : .5, opacity : 0,
-     scrollTrigger : {
-         trigger : '.history-wrap',
-         start : 'top top',
-         toggleActions : 'play none none reverse',
-         markers : true,
-         pin: true
-     }
- })
+// gsap.from('.history-wrap .history-contents',{
+//     y : 1000, duration : .5, opacity : 0,
+//      scrollTrigger : {
+//          trigger : '.history-wrap',
+//          start : 'top top',
+//          end:'top bottom',
+//          toggleActions : 'play none none reverse',
+//          markers : true,
+//          pin: true
+//      }
+//  })
 
 
 

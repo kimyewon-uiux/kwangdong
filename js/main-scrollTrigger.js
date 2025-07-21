@@ -97,29 +97,77 @@ productWrap
 // })
 
 
+const historyBox1 = gsap.timeline({
+    scrollTrigger : {
+    trigger: '.history-wrap .box1',
+    start: 'top top',
+    // end : '20% 20%',
+    toggleActions : 'play none none reverse',
+    pin:true,
+    scrub : true, 
+    }
+})
+historyBox1
+    .from('.box1-txt',{ y : -500, duration : .5, opacity : 0,duration: 10})
+    .to('.box1-txt .history-year',{x:-200, duration: 1})
+    .to('.box1-txt .history-box-right',{x:200, duration: 1})
+    .from('.box1 .history-img',{y:800, opacity : 0, duration: 5})
+
+const historyBox2 = gsap.timeline({
+    scrollTrigger : {
+    trigger: '.history-wrap .box2',
+    start: 'top top',
+    // end : '20% 20%',
+    toggleActions : 'play none none reverse',
+    pin:true,
+    scrub : true, 
+    }
+})
+historyBox2
+    .from('.box2-txt',{ y : -500, duration : .5, opacity : 0})
+    .to('.box2-txt .history-year',{x:-200, duration: 1})
+    .to('.box2-txt .history-box-right',{x:200, duration: 1})
+    .from('.box2 .history-img',{y:800, opacity : 0})
+
+const historyBox3 = gsap.timeline({
+    scrollTrigger : {
+    trigger: '.history-wrap .box3',
+    start: 'top top',
+    // end : '20% 20%',
+    toggleActions : 'play none none reverse',
+    pin:true,
+    scrub : true, 
+    }
+})
+historyBox3
+    .from('.box3-txt',{ y : -500, duration : .5, opacity : 0})
+    .to('.box3-txt .history-year',{x:-200, duration: 1})
+    .to('.box3-txt .history-box-right',{x:200, duration: 1})
+    .from('.box3 .history-img',{y:800, opacity : 0})
+
+const historyBox4 = gsap.timeline({
+    scrollTrigger : {
+    trigger: '.history-wrap .box4',
+    start: 'top top',
+    // end : '20% 20%',
+    toggleActions : 'play none none reverse',
+    pin:true,
+    scrub : true, 
+    }
+})
+historyBox4
+    .from('.box4-txt',{ y : -500, duration : .5, opacity : 0})
+    .to('.box4-txt .history-year',{x:-200, duration: 1})
+    .to('.box4-txt .history-box-right',{x:200, duration: 1})
+    .from('.box4 .history-img',{y:800, opacity : 0})
 
 
-gsap.from('.history-wrap .section-title',{
-    y : -1200, duration : .5, opacity : 0,
-     scrollTrigger : {
-         trigger : '.history-wrap',
-         start : 'top top',
-         toggleActions : 'play none none reverse',
-        //  markers : true,
-        //  pin: true
-     }
- })
-// gsap.from('.history-wrap .history-contents',{
-//     y : 1000, duration : .5, opacity : 0,
-//      scrollTrigger : {
-//          trigger : '.history-wrap',
-//          start : 'top top',
-//          end:'top bottom',
-//          toggleActions : 'play none none reverse',
-//          markers : true,
-//          pin: true
-//      }
-//  })
+
+
+
+
+
+
 
 
 

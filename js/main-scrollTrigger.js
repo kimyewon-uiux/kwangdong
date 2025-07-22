@@ -4,33 +4,33 @@ gsap.registerPlugin(ScrollToPlugin);
 
 
 
-// let sections = gsap.utils.toArray(".panel1");
+let sections = gsap.utils.toArray(".panel1");
 
-// function goToSection(i) {
-//   gsap.to(window, {
-//     scrollTo: { y: i * innerHeight, autoKill: false, ease: "Power3.easeInOut" },
-//     duration: 0.85
-//   });
-// }
+function goToSection(i) {
+  gsap.to(window, {
+    scrollTo: { y: i * innerHeight, autoKill: false, ease: "Power3.easeInOut" },
+    duration: 0.85
+  });
+}
 
-// ScrollTrigger.defaults({
-//   // markers: true
-// });
+ScrollTrigger.defaults({
+  // markers: true
+});
 
-// sections.forEach((eachPanel, i) => {
-//   // const mainAnim = gsap.timeline({ paused: true });
+sections.forEach((eachPanel, i) => {
+  // const mainAnim = gsap.timeline({ paused: true });
 
-//   ScrollTrigger.create({
-//     trigger: eachPanel,
-//     onEnter: () => goToSection(i)
-//   });
+  ScrollTrigger.create({
+    trigger: eachPanel,
+    onEnter: () => goToSection(i)
+  });
 
-//   ScrollTrigger.create({
-//     trigger: eachPanel,
-//     start: "bottom bottom",
-//     onEnterBack: () => goToSection(i)
-//   });
-// });
+  ScrollTrigger.create({
+    trigger: eachPanel,
+    start: "bottom bottom",
+    onEnterBack: () => goToSection(i)
+  });
+});
 
 
 
@@ -104,11 +104,12 @@ const historyBox1 = gsap.timeline({
     // end : '20% 20%',
     toggleActions : 'play none none reverse',
     pin:true,
-    scrub : true, 
+    scrub : 1,
+    markers : true 
     }
 })
 historyBox1
-    .from('.box1-txt',{ y : -500, duration : .5, opacity : 0,duration: 10})
+    .from('.box1-txt',{ y : -500, duration : 5, opacity : 0,duration: 10})
     .to('.box1-txt .history-year',{x:-200, duration: 1})
     .to('.box1-txt .history-box-right',{x:200, duration: 1})
     .from('.box1 .history-img',{y:800, opacity : 0, duration: 5})
@@ -120,11 +121,11 @@ const historyBox2 = gsap.timeline({
     // end : '20% 20%',
     toggleActions : 'play none none reverse',
     pin:true,
-    scrub : true, 
+    scrub : 1, 
     }
 })
 historyBox2
-    .from('.box2-txt',{ y : -500, duration : .5, opacity : 0})
+    .from('.box2-txt',{ y : -500, duration : 5, opacity : 0})
     .to('.box2-txt .history-year',{x:-200, duration: 1})
     .to('.box2-txt .history-box-right',{x:200, duration: 1})
     .from('.box2 .history-img',{y:800, opacity : 0})
@@ -136,11 +137,11 @@ const historyBox3 = gsap.timeline({
     // end : '20% 20%',
     toggleActions : 'play none none reverse',
     pin:true,
-    scrub : true, 
+    scrub : 1, 
     }
 })
 historyBox3
-    .from('.box3-txt',{ y : -500, duration : .5, opacity : 0})
+    .from('.box3-txt',{ y : -500, duration : 5, opacity : 0})
     .to('.box3-txt .history-year',{x:-200, duration: 1})
     .to('.box3-txt .history-box-right',{x:200, duration: 1})
     .from('.box3 .history-img',{y:800, opacity : 0})
@@ -152,14 +153,16 @@ const historyBox4 = gsap.timeline({
     // end : '20% 20%',
     toggleActions : 'play none none reverse',
     pin:true,
-    scrub : true, 
+    scrub : 1, 
     }
 })
 historyBox4
-    .from('.box4-txt',{ y : -500, duration : .5, opacity : 0})
+    .from('.box4-txt',{ y : -500, duration : 5, opacity : 0})
     .to('.box4-txt .history-year',{x:-200, duration: 1})
     .to('.box4-txt .history-box-right',{x:200, duration: 1})
     .from('.box4 .history-img',{y:800, opacity : 0})
+
+
 
 
 
@@ -193,7 +196,7 @@ gsap.from('.media-wrap .more-btn',{
     }
 })
 gsap.from('.media-wrap .media-contents',{
-   y : 1000, duration : 2, scale : 0.1,
+   y : 1000, duration : 1, scale : 0.1,
     scrollTrigger : {
         trigger : '.media-wrap',
         toggleActions : 'play none none reverse',

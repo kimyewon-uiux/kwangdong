@@ -174,10 +174,6 @@ historyBox4
 
 
 
-
-
-
-
 gsap.from('.media-wrap .title-text',{
    x : -1200, duration : .5,
     scrollTrigger : {

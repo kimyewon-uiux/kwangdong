@@ -718,7 +718,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 .esg-card.active .esg-card-bottom{
     max-height: 20rem;
-    /* transition: max-height .3s ease-in-out; */
+    transition: all .3s ease-in-out;
 }
 .esg-card.active .esg__btn .close{display: block;}
 .esg-card.active .esg__btn .open{display: none;}
@@ -726,7 +726,6 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 /* History ************************************************************************************* */
 .history-wrap{ 
-     border: 1px solid #000;
     position: relative; padding: 10rem 0; padding-bottom: 30rem; }
 
 .history-wrap .flow-content{
@@ -798,8 +797,7 @@ display: flex; flex-direction: column; overflow: hidden; gap: 1rem;
 /* Media ************************************************************************************* */
 .media-wrap{ 
     position: relative;
-    padding: 10rem 0; background: #fc3200e0;
-    height: 100vh;
+    padding: 12rem 0; background: #fc3200e0;
 }
 .media-wrap::before{
     z-index: -200;

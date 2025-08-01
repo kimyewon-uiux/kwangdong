@@ -207,3 +207,24 @@ rndLiImg.forEach(tab => {
 //         rndLiLink.css('color','red')
 //     })
 // })
+
+
+// ESG
+const esgLi = document.querySelectorAll(".esg-card");
+esgLi.forEach((btn) => {
+    esgLi.addEventListener("click", () => {
+      const faqItem = esgLi.parentNode;
+      const isActive = btn.classList.contains("active");
+  
+      removeActiveClasses();
+  
+      if (!isActive) {
+        faqItem.classList.add("active");
+      }
+    });
+  });
+function removeActiveClasses() {
+esgLi.forEach((btn) => {
+    btn.classList.remove("active");
+});
+}

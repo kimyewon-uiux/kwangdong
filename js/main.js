@@ -210,15 +210,20 @@ rndLiImg.forEach(tab => {
 
 
 // ESG
-const esgLi = document.querySelectorAll(".esg-card");
 
-esgLi.forEach((btn) => {
-    btn.addEventListener('click',()=>{
-        btn.classList.toggle("active")
+const esgCards = document.querySelectorAll(".esg-card");
 
-    if(!btn){
-        btn.classList.remove("active")
-    }    
-    })
-    
-})
+esgCards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+        // 내부에 button 클릭 시에도 카드 전체 클릭으로 처리되도록 함
+        const isAlreadyActive = card.classList.contains("active");
+
+        // 모든 카드 닫기
+        esgCards.forEach((c) => c.classList.remove("active"));
+
+        // 원래 닫혀 있던 카드면 열기
+        if (!isAlreadyActive) {
+            card.classList.add("active");
+        }
+    });
+});

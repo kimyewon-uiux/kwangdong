@@ -705,7 +705,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 }
 .esg-card-bottom .icon-box{
     margin-top: 2rem;
-    background: #ff7f0848; padding: 2rem; padding-top: 3rem;
+    background: #ff7f0848; padding: 2rem; padding-top: 1rem;
     display: flex; flex-direction: column; justify-content: space-between; align-items: center;
     width: 30%; aspect-ratio: 5 / 4; border-radius: 2rem; color: var(--org-color); font-size: 1.5rem;
 }
@@ -715,14 +715,20 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 
 .esg__icon{font-size: 4rem; font-weight: 400;}
 .esg__btn .close{display: none;}
-
 .esg-card.active .esg-card-bottom{
-    max-height: 20rem;
-    transition: all .3s ease-in-out;
+    max-height: 30rem;
+    transition: all .7s ease-in-out;
 }
 .esg-card.active .esg__btn .close{display: block;}
 .esg-card.active .esg__btn .open{display: none;}
+.icon-box img{width: 9rem;aspect-ratio: 1/1;}
 
+.esg-card.active .esg-card-top{ border-bottom: 1px solid var(--org-color);}
+.esg-card.active .esg-card-top .esg-card-title{
+    color: #333;}
+.esg-card.active .esg-card-top .esg__btn span{
+    color: #333;
+}
 
 /* History ************************************************************************************* */
 .history-wrap{ 

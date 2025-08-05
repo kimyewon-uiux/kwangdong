@@ -211,19 +211,44 @@ rndLiImg.forEach(tab => {
 
 // ESG
 
-const esgCards = document.querySelectorAll(".esg-card");
+// const esgCards = document.querySelectorAll(".esg-card");
 
-esgCards.forEach((card) => {
+// esgCards.forEach((card) => {
+//     card.addEventListener("click", (e) => {
+//         // 내부에 button 클릭 시에도 카드 전체 클릭으로 처리되도록 함
+//         const isAlreadyActive = card.classList.contains("active");
+
+//         // 모든 카드 닫기
+//         esgCards.forEach((c) => c.classList.remove("active"));
+
+//         // 원래 닫혀 있던 카드면 열기
+//         if (!isAlreadyActive) {
+//             card.classList.add("active");
+//         }
+//     });
+// });
+const esgCards = document.querySelectorAll(".esg-card");
+const esgVideos = document.querySelectorAll(".swiper-esg .swiper-slide");
+
+esgCards.forEach((card, index) => {
     card.addEventListener("click", (e) => {
-        // 내부에 button 클릭 시에도 카드 전체 클릭으로 처리되도록 함
         const isAlreadyActive = card.classList.contains("active");
 
         // 모든 카드 닫기
         esgCards.forEach((c) => c.classList.remove("active"));
 
-        // 원래 닫혀 있던 카드면 열기
+        // 모든 비디오 숨기기
+        esgVideos.forEach((v) => v.style.display = "none");
+
+        // 원래 닫혀 있던 카드면 열기 및 해당 비디오 보여주기
         if (!isAlreadyActive) {
             card.classList.add("active");
+            esgVideos[index].style.display = "block";
         }
     });
+});
+
+// 초기 상태에서 첫 번째 비디오만 보여주기
+esgVideos.forEach((v, i) => {
+    v.style.display = i === 0 ? "block" : "none";
 });

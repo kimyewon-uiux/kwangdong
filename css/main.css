@@ -683,7 +683,7 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 .esg-wrap .section-title{position: absolute; top: 20rem;}
 .esg-wrap .swiper-esg{position: absolute;  top: 0; right: 0; width: 50%; }
 .esg-wrap .swiper-esg .swiper-slide{width: 100%; height: 100vh; overflow: hidden;}
-.esg-wrap .swiper-esg .swiper-slide img{object-fit: cover; width: 100%; }
+.esg-wrap .swiper-esg .swiper-slide video{object-fit: cover; width: 100%; }
 
 .esg-pagination{
     position: absolute; bottom: 20rem;
@@ -729,6 +729,15 @@ hgroup p{font-family: 'pretendard'; font-size: 1.7rem; line-height: 1.2; font-we
 .esg-card.active .esg-card-top .esg__btn span{
     color: #333;
 }
+.esg-wrap .swiper-slide {
+    display: none;
+    transition: opacity 0.5s ease;
+}
+.esg-wrap .swiper-slide.active {
+    display: block;
+}
+
+
 
 /* History ************************************************************************************* */
 .history-wrap{ 
